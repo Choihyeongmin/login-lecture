@@ -25,6 +25,7 @@ const home = require("./src/routes/home");
 // 앱 세팅
 app.set("views", "./src/views"); //view(html) 분리
 app.set("view engine", "ejs"); //view(html) 분리 / view engine == ejs
+app.use(express.static(`${__dirname}/src/public`)); // 정적 경로 추가 
 
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 메서드;
