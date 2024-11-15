@@ -20,10 +20,10 @@ const app = express();
 
 
 // 라우팅
-const home = require("./routes/home");
+const home = require("./src/routes/home");
 
 // 앱 세팅
-app.set("views", "./views"); //view(html) 분리
+app.set("views", "./src/views"); //view(html) 분리
 app.set("view engine", "ejs"); //view(html) 분리 / view engine == ejs
 
 
