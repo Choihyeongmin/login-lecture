@@ -1,4 +1,5 @@
 "use strict";
+// main file, node server의 기본설정.
 // ------------use http---------------
 // const http = require("http");
 // const app = http.createServer((req, res) => {
@@ -16,6 +17,7 @@
 // -------------use express-----------------
 //모듈
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 
@@ -26,6 +28,8 @@ const home = require("./src/routes/home");
 app.set("views", "./src/views"); //view(html) 분리
 app.set("view engine", "ejs"); //view(html) 분리 / view engine == ejs
 app.use(express.static(`${__dirname}/src/public`)); // 정적 경로 추가 
+app.use(bodyParser.json()); //bodyParser 
+app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.use("/", home); // use -> 미들 웨어를 등록해주는 메서드;
